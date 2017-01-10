@@ -187,16 +187,11 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
-/ParkPark/packages
-ParkPark.userprefs
 
-ParkPark/ParkPark.Droid/Resources/Resource.Designer.cs
-ParkPark/ParkPark.Droid/Xam.Plugin.Geofence.1.0.6
-ParkPark/ParkPark.Droid/Xamarin.Android.Support.v4.23.0.1.3
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Base.26.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Base.27.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Basement.27.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Location.26.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Location.27.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Maps.26.0.0.0
-ParkPark/ParkPark.Droid/Xamarin.GooglePlayServices.Maps.27.0.0.0
+_ReSharper.*/
+[Bb]in/
+[Oo]bj/
+*.user
+*.userprefs
+*.suo
+.DS_Store
