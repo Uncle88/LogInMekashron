@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:LogInMekashron.Views" x:Class="LogInMekashron.Views.MyUI">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" BackgroundColor="#FADBD8">
+			<Grid>
+				<Entry Text="{Binding InLogIn}" HorizontalOptions="CenterAndExpand" Margin="5,60,5,15" VerticalOptions="StartAndExpand" TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text" />
+				<Entry Text="{Binding InPassword}" HorizontalOptions="CenterAndExpand" Margin="5,120,5,15" VerticalOptions="StartAndExpand" TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" />
+				<Button Command="{Binding ClickCommand}" Text="SEARCH" TextColor="#002DFA" FontSize="30" Margin="5,180,5,15" HorizontalOptions="CenterAndExpand" BorderRadius="5" VerticalOptions="StartAndExpand" BackgroundColor="#FA0066" />
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
