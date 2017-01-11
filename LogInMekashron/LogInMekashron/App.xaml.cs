@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using LogInMekashron.Views;
 
 namespace LogInMekashron
 {
@@ -8,7 +9,7 @@ namespace LogInMekashron
         {
             InitializeComponent();
 
-            MainPage = new LogInMekashronPage();
+            MainPage = new MyView();
         }
 
         protected override void OnStart()
