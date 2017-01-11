@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using LogInMekashron.Services;
 
 namespace LogInMekashron.ViewModels
 {
@@ -11,7 +12,7 @@ namespace LogInMekashron.ViewModels
         private Command _clickCommand;
         private string _inLogIn;
         private string _inPassword;
-        private LoginService _restServise;
+        private LogInService _restServise;
 
         public string InLogIn
         {
