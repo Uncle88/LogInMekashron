@@ -6,9 +6,9 @@ using Xamarin.Forms;
 namespace LogInMekashron.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyUI : ContentPage
+    public partial class MyView : ContentPage
     {
-        public MyUI()
+        public MyView()
         {
             InitializeComponent();
             //BindingContext = new MyUI();

@@ -9,7 +9,7 @@ namespace LogInMekashron
         {
             InitializeComponent();
 
-            MainPage = new MyUI();
+            MainPage = new MyView();
         }
 
         protected override void OnStart()
