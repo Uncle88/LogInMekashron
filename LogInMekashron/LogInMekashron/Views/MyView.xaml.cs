@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
+using LogInMekashron.ViewModels;
 
 namespace LogInMekashron.Views
 {
@@ -11,7 +12,7 @@ namespace LogInMekashron.Views
         public MyView()
         {
             InitializeComponent();
-            //BindingContext = new MyUI();
+            BindingContext = new LogInViewModel();
         }
     }
 }
