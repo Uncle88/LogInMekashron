@@ -13,7 +13,7 @@ namespace LogInMekashron.ViewModels
         private Command _clickCommand;
         private string _inLogIn;
         private string _inPassword;
-        private LogInService _restServise;
+        private LogInService _logInServiсe;
 
         public string InLogIn
         {
@@ -39,9 +39,9 @@ namespace LogInMekashron.ViewModels
         {
             get
             {
-                return _clickCommand ?? (_clickCommand = new Command(async () =>
+                return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
-                     await _restServise.GetAsync();
+                     await _logInServiсe.LogIn(InLogIn, InPassword);
                  }));
             }
         }

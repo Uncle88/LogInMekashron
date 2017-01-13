@@ -4,13 +4,21 @@ using Xamarin.Forms;
 
 namespace LogInMekashron.Services
 {
-    public class LogInService : ContentPage
+    public class LogInService
     {
-        public LogInService() { }
+        private RestService _restService;
 
-        internal Task GetAsync()
+        public LogInService()
         {
-            throw new NotImplementedException();
+            _restService = new RestService();
+        }
+
+        public async Task LogIn(string InLogIn, string InPassword)
+        {
+            var response = await _restService.GetAsync<object>("/account/login.json");
+
+
+            return;
         }
     }
 }
