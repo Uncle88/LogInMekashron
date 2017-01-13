@@ -43,8 +43,8 @@
     </Compile>
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
-    <Compile Include="Services\LogInService.cs" />
-    <Compile Include="Services\RestService.cs" />
+    <Compile Include="Services\LogIn\LogInService.cs" />
+    <Compile Include="Services\Network\RestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -73,6 +73,8 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
+    <Folder Include="Services\LogIn\" />
+    <Folder Include="Services\Network\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
