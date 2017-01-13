@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using LogInMekashron.LogIn;
 using Xamarin.Forms;
 
 namespace LogInMekashron.Services
 {
-    public class LogInService
+    public class LogInService : ILogInService
     {
         private RestService _restService;
 
