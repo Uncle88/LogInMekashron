@@ -1,20 +1,12 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace LogInMekashron.LogIn
 {
-    public class ILogInService : ContentPage
+    interface ILogInService
     {
-        public ILogInService()
-        {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Hello ContentPage" }
-                }
-            };
-        }
+        Task LogIn(string InLogIn, string InPassword);
     }
 }
 
