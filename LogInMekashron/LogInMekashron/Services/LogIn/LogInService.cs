@@ -16,7 +16,7 @@ namespace LogInMekashron.Services
 
         public async Task LogIn(string InLogIn, string InPassword)
         {
-            var response = await _restService.GetAsync<object>("/account/login.json");
+            await _restService.GetAsync<object>("text/xml", InLogIn, InPassword);
             return;
         }
     }

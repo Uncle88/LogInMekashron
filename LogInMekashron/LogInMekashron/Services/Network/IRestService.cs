@@ -6,7 +6,7 @@ namespace LogInMekashron.Network
 {
     public interface IRestService
     {
-        Task<T> GetAsync<T>(string url);
+        Task<T> GetAsync<T>(string url, string InLogIn, string InPassword);
     }
 }
 
