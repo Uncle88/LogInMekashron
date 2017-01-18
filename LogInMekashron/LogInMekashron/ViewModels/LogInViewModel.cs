@@ -3,11 +3,14 @@
 using Xamarin.Forms;
 using LogInMekashron.Services;
 using System.ComponentModel;
+using LogInMekashron.Network;
 
 namespace LogInMekashron.ViewModels
 {
     public class LogInViewModel : ViewModelBase
     {
+        public IRestService messageServise;
+
         public LogInViewModel() { }
 
         private Command _clickCommand;
