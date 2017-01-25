@@ -28,14 +28,21 @@ namespace LogInMekashron.Services
             var soapString = this.ConstructSoapRequest(InLogIn, InPassword);
             var client = new HttpClient();
 
-            client.BaseAddress = new Uri(Url);
-            client.DefaultRequestHeaders.Add("SOAPAction", Url);
+            HttpContent httpContent = new StringContent(soapString);
+            HttpResponseMessage response;
 
-            var content = new StringContent(soapString, Encoding.UTF8, "application/xml");
-            var response = await client.PostAsync(Url, content);//!!!
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, Url);
+            string SOAPAction = "";
+            req.Headers.Add("SOAPAction", SOAPAction);
+            req.Method = HttpMethod.Post;
+            req.Content = httpContent;
+            req.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("text/xml; charset=utf-8");
 
-            var soapResponse = await response.Content.ReadAsStringAsync();
-            return (T)this.ParseSoapResponse(soapResponse);
+            response = await client.SendAsync(req);
+
+            var responseBodyAsText = await response.Content.ReadAsStringAsync();
+            return (T)this.ParseSoapResponse(responseBodyAsText);
+
         }
 
         object ParseSoapResponse(string soapResponse)
