@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using LogInMekashron.Services;
 using System.ComponentModel;
@@ -9,20 +8,24 @@ namespace LogInMekashron.ViewModels
 {
     public class LogInViewModel : ViewModelBase
     {
-        public LogInViewModel() { }
+
 
         private Command _clickCommand;
         private string _inLogIn;
         private string _inPassword;
         private LogInService _logInServiсe;
 
+        public LogInViewModel()
+        {
+            this._logInServiсe = new LogInService();
+        }
         public string InLogIn
         {
             get { return _inLogIn; }
             set
             {
                 _inLogIn = value;
-                OnPropertyChanged(nameof(InLogIn));
+                OnPropertyChanged(nameof(InPassword));
             }
         }
 
