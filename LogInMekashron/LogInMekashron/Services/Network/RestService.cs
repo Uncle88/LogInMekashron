@@ -23,26 +23,24 @@ namespace LogInMekashron.Services
     {
         private const string Url = "http://isapi.mekashron.com/StartAJob/General.dll?mode=default";
 
-        public async Task<T> GetAsync<T>(string url, string InLogIn, string InPassword)
+        public Task<T> GetAsync<T>(string url, string InLogIn, string InPassword)
         {
             var soapString = this.ConstructSoapRequest(InLogIn, InPassword);
             var client = new HttpClient();
+            client.BaseAddress = new Uri(Url);
+            string _contentType = "application/xml";
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(_contentType));
 
-            HttpContent httpContent = new StringContent(soapString);
+            HttpContent _body = new StringContent(soapString);
+            _body.Headers.ContentType = new MediaTypeHeaderValue(_contentType);//
+
             HttpResponseMessage response;
+            response = client.PostAsync(Url, _body).Result;
+            response.EnsureSuccessStatusCode();
 
-            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, Url);
-            string SOAPAction = "";
-            req.Headers.Add("SOAPAction", SOAPAction);
-            req.Method = HttpMethod.Post;
-            req.Content = httpContent;
-            req.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("text/xml; charset=utf-8");
+            var content = response.Content.ReadAsStringAsync().Result;
 
-            response = await client.SendAsync(req);
-
-            var responseBodyAsText = await response.Content.ReadAsStringAsync();
-            return (T)this.ParseSoapResponse(responseBodyAsText);
-
+            return (Task<T>)this.ParseSoapResponse(content);
         }
 
         object ParseSoapResponse(string soapResponse)
