@@ -16,53 +16,43 @@ using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.Linq;
+using System.Xml;
 
 namespace LogInMekashron.Services
 {
     public class RestService : IRestService
     {
-        private const string Url = "http://isapi.mekashron.com/StartAJob/General.dll?mode=default";
+        private const string Url = "http://isapi.mekashron.com"; //StartAJob/General.dll?mode=default
 
-        public Task<T> GetAsync<T>(string url, string InLogIn, string InPassword)
+        public async Task<T> GetAsync<T>(string url, string InLogIn, string InPassword)
         {
+
             var soapString = this.ConstructSoapRequest(InLogIn, InPassword);
             var client = new HttpClient();
             client.BaseAddress = new Uri(Url);
-            string _contentType = "application/xml";
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(_contentType));
+            client.DefaultRequestHeaders.Add("SOAPAction", Url);
 
-            HttpContent _body = new StringContent(soapString);
-            _body.Headers.ContentType = new MediaTypeHeaderValue(_contentType);//
+            var content = new StringContent(soapString, Encoding.UTF8, "application/xml");
+            var response = await client.PostAsync(Url, content);//!!!
 
-            HttpResponseMessage response;
-            response = client.PostAsync(Url, _body).Result;
-            response.EnsureSuccessStatusCode();
-
-            var content = response.Content.ReadAsStringAsync().Result;
-
-            return (Task<T>)this.ParseSoapResponse(content);
+            var soapResponse = await response.Content.ReadAsStringAsync();
+            return (T)this.ParseSoapResponse(soapResponse);
         }
 
         object ParseSoapResponse(string soapResponse)
         {
             var soap = XDocument.Parse(soapResponse);
-            XNamespace ns = "http://isapi.mekashron.com/StartAJob/General.dll?mode=default";
+            XNamespace ns = "http://isapi.mekashron.com";//StartAJob/General.dll?mode=default
             var rez = soap.Descendants(ns + "AddResponse").First().Element(ns + "AddResult").Value;
             return rez;
         }
 
         private string ConstructSoapRequest(string inLogIn, string inPassword)
         {
-            return String.Format(@"<? xml version = \1.0\ encoding = \UTF-8\ ?>\r\n" +
-        "< env : Envelope xmlns: env = \"http://www.w3.org/2003/05/soap-envelope\" " +
-            "xmlns: ns1 = \"urn:General.Intf-IGeneral\" " +
-            "xmlns: xsd = \"http://www.w3.org/2001/XMLSchema\" " +
-            "xmlns: xsi = \"http://www.w3.org/2001/XMLSchema-instance\" " +
-            "xmlns: enc = \"http://www.w3.org/2003/05/soap-encoding\" >" +
-            "< env:Body >< ns1:Login env:encodingStyle = \"http://www.w3.org/2003/05/soap-encoding\" >" +
-                                 "< UserName xsi: type = \"xsd:string\" > {0} </ UserName >" +
-                                 "< Password xsi: type = \"xsd:string\" > {1} </ Password >" +
-                                 "< IP xsi: type = \"xsd:string\" > 3 </ IP ></ ns1:Login ></ env:Body ></ env:Envelope >", inLogIn, inPassword);
+            String xmlString = @"<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"" xmlns:ns1=""urn:General.Intf-IGeneral"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:enc=""http://www.w3.org/2003/05/soap-encoding""><env:Body><ns1:Login env:encodingStyle=""http://www.w3.org/2003/05/soap-encoding""><UserName xsi:type=""xsd:string"">A</UserName><Password xsi:type=""xsd:string"">Z</Password><IP xsi:type=""xsd:string"">3</IP></ns1:Login></env:Body></env:Envelope>";
+
+            return xmlString;
         }
     }
 }
