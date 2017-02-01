@@ -47,6 +47,7 @@
     <Compile Include="Services\Network\RestService.cs" />
     <Compile Include="Services\Network\IRestService.cs" />
     <Compile Include="Services\LogIn\ILogInService.cs" />
+    <Compile Include="Services\Dialog\IDialogService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -80,6 +81,7 @@
     <Folder Include="Services\" />
     <Folder Include="Services\LogIn\" />
     <Folder Include="Services\Network\" />
+    <Folder Include="Services\Dialog\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
