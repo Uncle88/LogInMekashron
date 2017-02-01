@@ -1,20 +1,3 @@
-﻿using System;
-
-using Xamarin.Forms;
-
-namespace LogInMekashron.Dialog
-{
-    public class IDialogService : ContentPage
-    {
-        public IDialogService()
-        {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Hello ContentPage" }
-                }
-            };
-        }
-    }
-}
-
+﻿using System; using System.Threading.Tasks; using System.Xml.Linq;
+using Xamarin.Forms;  namespace LogInMekashron.Dialog {     interface IDialogService
+    {         Task ShowMessage(XDocument soap);     } } 

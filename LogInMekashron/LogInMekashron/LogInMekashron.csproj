@@ -48,6 +48,7 @@
     <Compile Include="Services\Network\IRestService.cs" />
     <Compile Include="Services\LogIn\ILogInService.cs" />
     <Compile Include="Services\Dialog\IDialogService.cs" />
+    <Compile Include="Services\Dialog\DialogService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

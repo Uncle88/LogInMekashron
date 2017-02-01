@@ -37,18 +37,13 @@ namespace LogInMekashron.Services
             var response = await client.PostAsync(uri, content);
 
             var soapResponse = await response.Content.ReadAsStringAsync();
-            return (T)this.ParseSoapResponse(soapResponse);
+            return (T)this.ParseSoapResponse(soapResponse);//
         }
 
         object ParseSoapResponse(string soapResponse)
         {
             var soap = XDocument.Parse(soapResponse);
-            var xmlMessage = (from article in soap.Descendants("article")
-                              select new
-                              {
-                                  message = article.Descendants("ResultMessage").SingleOrDefault()
-                              }).ToString();
-            return xmlMessage;
+            return soap;
         }
 
         private string ConstructSoapRequest(string inLogIn, string inPassword)

@@ -43,7 +43,7 @@ namespace LogInMekashron.ViewModels
         {
             get
             {
-                return _clickCommand ?? (_clickCommand = new Command(async (OnButtonClicked) =>
+                return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
                      await _logInServiсe.LogIn(InLogIn, InPassword);
 
