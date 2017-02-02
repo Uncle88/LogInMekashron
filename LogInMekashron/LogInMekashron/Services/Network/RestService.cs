@@ -17,6 +17,7 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.Linq;
 using System.Xml;
+using System.Diagnostics.Contracts;
 
 namespace LogInMekashron.Services
 {
@@ -40,7 +41,7 @@ namespace LogInMekashron.Services
             return (T)this.ParseSoapResponse(soapResponse);//
         }
 
-        object ParseSoapResponse(string soapResponse)
+        public object ParseSoapResponse(string soapResponse)
         {
             var soap = XDocument.Parse(soapResponse);
             return soap;
