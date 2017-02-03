@@ -60,7 +60,7 @@ namespace LogInMekashron.ViewModels
                 return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
                      await _logInServiсe.LogIn(InLogIn, InPassword);
-                     _dialogService.ShowMessage(Soap);//ShowMessage(Soap)
+                     _dialogService.ShowMessage(Soap);
                  }));
             }
         }

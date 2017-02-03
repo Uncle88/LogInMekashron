@@ -49,6 +49,7 @@
     <Compile Include="Services\LogIn\ILogInService.cs" />
     <Compile Include="Services\Dialog\IDialogService.cs" />
     <Compile Include="Services\Dialog\DialogService.cs" />
+    <Compile Include="Services\Dialog\DialogFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
