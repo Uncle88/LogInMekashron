@@ -8,9 +8,9 @@ using LogInMekashron.Services;
 namespace LogInMekashron.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UILogin : ContentPage
+    public partial class LoginView : ContentPage
     {
-        public UILogin()
+        public LoginView()
         {
             InitializeComponent();
             BindingContext = new LogInViewModel();

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace LogInMekashron.Dialog
 {
-    public class DialogFilter : ContentPage
+    public class DialogFilter
     {
         public DialogFilter() { }
 
