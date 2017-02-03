@@ -9,7 +9,7 @@ namespace LogInMekashron
         {
             InitializeComponent();
 
-            MainPage = new MyView();
+            MainPage = new UILogin();
         }
 
         protected override void OnStart()
