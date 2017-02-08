@@ -1,10 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using LogInMekashron.Dialog;
+using LogInMekashron.LogIn;
 using LogInMekashron.Services;
-using System.ComponentModel;
-using LogInMekashron.Network;
-using LogInMekashron.Dialog;
-using System.Xml.Linq;
+using Xamarin.Forms;
 
 namespace LogInMekashron.ViewModels
 {
@@ -13,24 +10,13 @@ namespace LogInMekashron.ViewModels
         private Command _clickCommand;
         private string _inLogIn;
         private string _inPassword;
-        private LogInService _logInServiсe;
-        private DialogService _dialogService;
-        private XDocument _soap;
+        private ILoginService _loginServiсe;
+        private IDialogService _dialogService;
 
         public LogInViewModel()
         {
-            this._logInServiсe = new LogInService();
-            this._dialogService = new DialogService();
-        }
-
-        public XDocument Soap
-        {
-            get { return _soap; }
-            set
-            {
-                _soap = value;
-                OnPropertyChanged(nameof(Soap));
-            }
+            _loginServiсe = new LogInService();
+            _dialogService = new DialogService();
         }
 
         public string InLogIn
@@ -39,7 +25,7 @@ namespace LogInMekashron.ViewModels
             set
             {
                 _inLogIn = value;
-                OnPropertyChanged(nameof(InPassword));
+                OnPropertyChanged(nameof(InLogIn));
             }
         }
 
@@ -59,8 +45,12 @@ namespace LogInMekashron.ViewModels
             {
                 return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
-                     await _logInServiсe.LogIn(InLogIn, InPassword);
-                     _dialogService.ShowMessage(Soap);//ShowMessage(Soap)
+                     if (string.IsNullOrEmpty(InLogIn) || string.IsNullOrEmpty(InPassword))
+                     {
+                         return;
+                     }
+                     await _loginServiсe.Login(InLogIn, InPassword);
+                     // _dialogService.ShowMessage();
                  }));
             }
         }
