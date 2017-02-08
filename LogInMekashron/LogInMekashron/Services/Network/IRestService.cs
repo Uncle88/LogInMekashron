@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
-using Xamarin.Forms;
+using System.Xml.Linq;
 
 namespace LogInMekashron.Network
 {
     public interface IRestService
     {
-        Task<T> GetAsync<T>(string url, string InLogIn, string InPassword);
+        Task<XDocument> GetAsync<T>(string url, StringContent content);
     }
 }
 

@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using System.Linq;
 
 
+
 namespace LogInMekashron.Dialog
 {
     public class DialogFilter

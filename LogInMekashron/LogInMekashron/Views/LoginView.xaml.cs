@@ -15,10 +15,5 @@ namespace LogInMekashron.Views
             InitializeComponent();
             BindingContext = new LogInViewModel();
         }
-
-        //async void OnAlertSimpleClicked(object sender, EventArgs e)
-        //{
-        //    await DisplayAlert("Message","message" , "OK");
-        //}
     }
 }
