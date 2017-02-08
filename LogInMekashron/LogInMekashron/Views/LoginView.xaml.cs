@@ -8,17 +8,12 @@ using LogInMekashron.Services;
 namespace LogInMekashron.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyView : ContentPage
+    public partial class LoginView : ContentPage
     {
-        public MyView()
+        public LoginView()
         {
             InitializeComponent();
             BindingContext = new LogInViewModel();
         }
-
-        //async void OnAlertSimpleClicked(object sender, EventArgs e)
-        //{
-        //    await DisplayAlert("Message","message" , "OK");
-        //}
     }
 }

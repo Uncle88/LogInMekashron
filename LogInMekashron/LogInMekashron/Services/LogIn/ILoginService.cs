@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace LogInMekashron.LogIn
 {
-    interface ILogInService
+    interface ILoginService
     {
-        Task LogIn(string InLogIn, string InPassword);
+        Task Login(string logIn, string password);
     }
 }
 

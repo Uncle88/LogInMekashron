@@ -1,31 +1,31 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using LogInMekashron.Dialog;
+using LogInMekashron.LogIn;
 using LogInMekashron.Services;
-using System.ComponentModel;
-using LogInMekashron.Network;
+using Xamarin.Forms;
 
 namespace LogInMekashron.ViewModels
 {
     public class LogInViewModel : ViewModelBase
     {
-
-
         private Command _clickCommand;
         private string _inLogIn;
         private string _inPassword;
-        private LogInService _logInServiсe;
+        private ILoginService _loginServiсe;
+        private IDialogService _dialogService;
 
         public LogInViewModel()
         {
-            this._logInServiсe = new LogInService();
+            _loginServiсe = new LogInService();
+            _dialogService = new DialogService();
         }
+
         public string InLogIn
         {
             get { return _inLogIn; }
             set
             {
                 _inLogIn = value;
-                OnPropertyChanged(nameof(InPassword));
+                OnPropertyChanged(nameof(InLogIn));
             }
         }
 
@@ -43,10 +43,14 @@ namespace LogInMekashron.ViewModels
         {
             get
             {
-                return _clickCommand ?? (_clickCommand = new Command(async (OnButtonClicked) =>
+                return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
-                     await _logInServiсe.LogIn(InLogIn, InPassword);
-
+                     if (string.IsNullOrEmpty(InLogIn) || string.IsNullOrEmpty(InPassword))
+                     {
+                         return;
+                     }
+                     await _loginServiсe.Login(InLogIn, InPassword);
+                     // _dialogService.ShowMessage();
                  }));
             }
         }
