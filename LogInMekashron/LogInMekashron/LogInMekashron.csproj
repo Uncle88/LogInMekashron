@@ -50,6 +50,7 @@
     <Compile Include="Services\Dialog\IDialogService.cs" />
     <Compile Include="Services\Dialog\DialogService.cs" />
     <Compile Include="Services\Dialog\DialogFilter.cs" />
+    <Compile Include="Services\LogIn\IIPAddressManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
