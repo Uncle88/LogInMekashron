@@ -4,19 +4,18 @@ using Xamarin.Forms;
 using LogInMekashron.Services;
 using System.Xml.Linq;
 using System.Linq;
+using LogInMekashron.Views;
 
 
 namespace LogInMekashron.Dialog
 {
     public class DialogService : IDialogService
     {
-        //DialogFilter _dialogFilter;
+        private LoginView _loginView;
 
-        public DialogService() { }
-
-        public void ShowMessage(XDocument doc)
+        public void ShowMessage(string Message)
         {
-            // _dialogFilter.LinqFilter(doc);
+            _loginView.DisplayAlert("Message", Message, "OK");
         }
     }
 }

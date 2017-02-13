@@ -14,6 +14,17 @@ namespace LogInMekashron.ViewModels
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
         private XDocument _doc;
+        private string _message;
+
+        public string Message
+        {
+            get { return _message; }
+            set
+            {
+                _message = value;
+                OnPropertyChanged(nameof(Message));
+            }
+        }
 
         public XDocument doc
         {
@@ -63,8 +74,7 @@ namespace LogInMekashron.ViewModels
                      }
                      await _loginServiсe.Login(InLogIn, InPassword);
                      DialogFilter.LinqFilter(doc);
-                     // _dialogService.ShowMessage();
-                     //_dialogService.DisplayAlert("Message", Message, "OK");//
+                     _dialogService.ShowMessage(Message);
                  }));
             }
         }

@@ -34,10 +34,10 @@ namespace LogInMekashron.Services
 
             var response = await client.PostAsync(uri, content);
 
-            string myResult = await response.Content.ReadAsStringAsync();//var soapRespons
+            string myResult = await response.Content.ReadAsStringAsync();
 
             XDocument doc = XDocument.Parse(myResult);
-            return doc;//soapResponse;//!!!
+            return doc;
         }
 
     }

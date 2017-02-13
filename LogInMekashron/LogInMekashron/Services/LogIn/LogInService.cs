@@ -45,13 +45,7 @@ namespace LogInMekashron.Services
                             </ns1:Login>
                         </env:Body>
                     </env:Envelope>", inLogIn, inPassword, ipaddress);
-            return xmlString;//120.23.43.23
-        }
-
-        public object ParseSoapResponse(string soapResponse)
-        {
-            var soap = XDocument.Parse(soapResponse);
-            return soap;
+            return xmlString;
         }
     }
 }
