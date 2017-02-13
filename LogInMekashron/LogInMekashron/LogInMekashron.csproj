@@ -49,8 +49,8 @@
     <Compile Include="Services\LogIn\ILoginService.cs" />
     <Compile Include="Services\Dialog\IDialogService.cs" />
     <Compile Include="Services\Dialog\DialogService.cs" />
-    <Compile Include="Services\Dialog\DialogFilter.cs" />
     <Compile Include="Services\LogIn\IIPAddressManager.cs" />
+    <Compile Include="Helpers\DialogFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -85,6 +85,7 @@
     <Folder Include="Services\LogIn\" />
     <Folder Include="Services\Network\" />
     <Folder Include="Services\Dialog\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -11,7 +11,12 @@ namespace LogInMekashron.Dialog
 {
     public class DialogService : IDialogService
     {
-        private LoginView _loginView;
+        LoginView _loginView;
+
+        public DialogService()
+        {
+            //_loginView = new LoginView();
+        }
 
         public void ShowMessage(string Message)
         {

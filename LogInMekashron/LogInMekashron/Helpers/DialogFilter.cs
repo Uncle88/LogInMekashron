@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
 
-namespace LogInMekashron.Dialog
+namespace LogInMekashron.Helpers
 {
     public static class DialogFilter
     {

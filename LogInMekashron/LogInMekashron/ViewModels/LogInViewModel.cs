@@ -3,6 +3,7 @@ using LogInMekashron.LogIn;
 using LogInMekashron.Services;
 using Xamarin.Forms;
 using System.Xml.Linq;
+using LogInMekashron.Helpers;
 
 namespace LogInMekashron.ViewModels
 {
