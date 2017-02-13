@@ -1,5 +1,4 @@
-﻿using System;
-namespace LogInMekashron.LogIn
+﻿namespace LogInMekashron.LogIn
 {
     public interface IIPAddressManager
     {
