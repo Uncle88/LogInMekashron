@@ -4,14 +4,15 @@ using LogInMekashron.Services;
 using Xamarin.Forms;
 using System.Xml.Linq;
 using LogInMekashron.Helpers;
+using LogInMekashron.Views;
 
 namespace LogInMekashron.ViewModels
 {
-    public class LogInViewModel : ViewModelBase
+    public class LoginViewModel : ViewModelBase
     {
         private Command _clickCommand;
-        private string _inLogIn;
-        private string _inPassword;
+        private string _logIn;
+        private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
         private XDocument _doc;
@@ -37,29 +38,29 @@ namespace LogInMekashron.ViewModels
             }
         }
 
-        public LogInViewModel()
+        public LoginViewModel()
         {
             _loginServiсe = new LogInService();
             _dialogService = new DialogService();
         }
 
-        public string InLogIn
+        public string Login
         {
-            get { return _inLogIn; }
+            get { return _logIn; }
             set
             {
-                _inLogIn = value;
-                OnPropertyChanged(nameof(InLogIn));
+                _logIn = value;
+                OnPropertyChanged(nameof(Login));
             }
         }
 
-        public string InPassword
+        public string Password
         {
-            get { return _inPassword; }
+            get { return _password; }
             set
             {
-                _inPassword = value;
-                OnPropertyChanged(nameof(InPassword));
+                _password = value;
+                OnPropertyChanged(nameof(Password));
             }
         }
 
@@ -69,11 +70,11 @@ namespace LogInMekashron.ViewModels
             {
                 return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                  {
-                     if (string.IsNullOrEmpty(InLogIn) || string.IsNullOrEmpty(InPassword))
+                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                      {
                          return;
                      }
-                     await _loginServiсe.Login(InLogIn, InPassword);
+                     await _loginServiсe.Login(Login, Password);
                      DialogFilter.LinqFilter(doc);
                      _dialogService.ShowMessage(Message);
                  }));

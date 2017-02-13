@@ -1,23 +1,8 @@
 ﻿using System;
-using System.Net;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using LogInMekashron.Network;
-using System.Runtime.InteropServices;
-using System.Xml.Serialization;
+using System.Threading.Tasks;
 using System.Xml.Linq;
-using System.Linq;
-using System.Xml;
-using System.Diagnostics.Contracts;
+using LogInMekashron.Network;
 
 
 namespace LogInMekashron.Services

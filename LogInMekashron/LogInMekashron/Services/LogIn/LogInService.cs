@@ -13,18 +13,19 @@ namespace LogInMekashron.Services
     {
         private const string Url = "http://isapi.mekashron.com/StartAJob/General.dll/soap/ILogin";
         private IRestService _restService;
+        public XDocument doc;
 
         public LogInService()
         {
             _restService = new RestService();
         }
 
-        public async Task Login(string login, string password)
+        public async Task<XDocument> Login(string login, string password)
         {
             var soapString = this.ConstructSoapRequest(login, password, ipaddress);
             var content = new StringContent(soapString, Encoding.UTF8, "application/xml");
             await _restService.GetAsync<string>(Url, content);
-            return;
+            return doc;
         }
 
         string ipaddress = DependencyService.Get<IIPAddressManager>().GetIPAddress();

@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms.Xaml;
+﻿using LogInMekashron.ViewModels;
 using Xamarin.Forms;
-using LogInMekashron.ViewModels;
-using LogInMekashron.Services;
+using Xamarin.Forms.Xaml;
 
 namespace LogInMekashron.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class LoginView : ContentPage
     {
         public LoginView()
         {
             InitializeComponent();
-            BindingContext = new LogInViewModel();
+            BindingContext = new LoginViewModel();
         }
     }
 }
