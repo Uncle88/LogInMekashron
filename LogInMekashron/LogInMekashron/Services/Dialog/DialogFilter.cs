@@ -1,25 +1,17 @@
-﻿using System;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using LogInMekashron.Services;
+﻿using System.Linq;
 using System.Xml.Linq;
-using System.Linq;
-
-
 
 namespace LogInMekashron.Dialog
 {
-    public class DialogFilter
+    public static class DialogFilter
     {
-        public DialogFilter() { }
-
-        public string LinqFilter(XDocument soap)
+        public static string LinqFilter(XDocument doc)
         {
-            string Message = (from article in soap.Descendants("article")
+            string Message = (from article in doc.Descendants("article")
                               select new
                               {
                                   message = article.Descendants("ResultMessage").SingleOrDefault()
-                              }).ToString();//_dialogService.DisplayAlert("Message", Message, "OK");//
+                              }).ToString();
             return Message;
         }
     }

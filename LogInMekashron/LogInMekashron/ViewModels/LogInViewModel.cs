@@ -2,6 +2,7 @@
 using LogInMekashron.LogIn;
 using LogInMekashron.Services;
 using Xamarin.Forms;
+using System.Xml.Linq;
 
 namespace LogInMekashron.ViewModels
 {
@@ -12,6 +13,17 @@ namespace LogInMekashron.ViewModels
         private string _inPassword;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
+        private XDocument _doc;
+
+        public XDocument doc
+        {
+            get { return _doc; }
+            set
+            {
+                _doc = value;
+                OnPropertyChanged(nameof(doc));
+            }
+        }
 
         public LogInViewModel()
         {
@@ -50,7 +62,9 @@ namespace LogInMekashron.ViewModels
                          return;
                      }
                      await _loginServiсe.Login(InLogIn, InPassword);
+                     DialogFilter.LinqFilter(doc);
                      // _dialogService.ShowMessage();
+                     //_dialogService.DisplayAlert("Message", Message, "OK");//
                  }));
             }
         }
