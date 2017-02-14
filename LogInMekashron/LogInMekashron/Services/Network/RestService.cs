@@ -24,7 +24,6 @@ namespace LogInMekashron.Services
             XDocument doc = XDocument.Parse(myResult);
             return doc;
         }
-
     }
 }
 

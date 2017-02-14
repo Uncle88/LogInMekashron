@@ -7,7 +7,7 @@ namespace LogInMekashron.LogIn
 {
     interface ILoginService
     {
-        Task<XDocument> Login(string logIn, string password);
+        Task<XDocument> Login(string login, string password);
     }
 }
 
