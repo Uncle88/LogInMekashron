@@ -24,7 +24,7 @@ namespace LogInMekashron.Services
         {
             var soapString = this.ConstructSoapRequest(login, password, ipaddress);
             var content = new StringContent(soapString, Encoding.UTF8, "application/xml");
-            await _restService.GetAsync<string>(Url, content);
+            var doc = await _restService.GetAsync<string>(Url, content);
             return doc;
         }
 

@@ -75,8 +75,8 @@ namespace LogInMekashron.ViewModels
                     {
                         return;
                     }
-                    XDocument doc1 = await _loginServiсe.Login(Login, Password);
-                    string Message1 = DialogFilter.LinqFilter(doc1);
+                    XDocument doc = await _loginServiсe.Login(Login, Password);
+                    string Message1 = DialogFilter.LinqFilter(doc);
                     _dialogService.ShowMessage(Message1);
                 }));
             }
