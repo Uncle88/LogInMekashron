@@ -13,14 +13,20 @@ namespace LogInMekashron.Dialog
     {
         LoginView _loginView;
 
-        public DialogService()
-        {
-            //_loginView = new LoginView();
-        }
+        //public void ShowMessage1(string Message)
+        //{
+        //    _loginView = new LoginView();
+        //    _loginView.DisplayAlert("Message", Message, "OK");
+        //}
 
         public void ShowMessage(string Message)
         {
-            _loginView.DisplayAlert("Message", Message, "OK");
+            _loginView = new LoginView();
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                _loginView.DisplayAlert("title", Message, "OK");
+            });
+
         }
     }
 }
