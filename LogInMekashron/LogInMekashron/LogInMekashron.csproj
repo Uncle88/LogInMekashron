@@ -51,6 +51,7 @@
     <Compile Include="Services\Dialog\DialogService.cs" />
     <Compile Include="Helpers\DialogFilter.cs" />
     <Compile Include="Services\DependencyService\IIPAddressManager.cs" />
+    <Compile Include="Model\RootObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -87,6 +88,7 @@
     <Folder Include="Services\Dialog\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\DependencyService\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
