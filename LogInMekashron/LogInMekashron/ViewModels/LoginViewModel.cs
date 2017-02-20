@@ -80,6 +80,14 @@ namespace LogInMekashron.ViewModels
                     XDocument doc = await _loginServiсe.Login(Login, Password);
                     string Message1 = DialogFilter.LinqFilter(doc);
                     RootObject obj = JsonConvert.DeserializeObject<RootObject>(Message1);
+
+                    FormattedString formattedString = new FormattedString();
+                    formattedString.Spans.Contains(new Span
+                    {
+                        Text = obj.ResultMessage,
+                        ForegroundColor = Color.Orange
+                    });
+
                     _dialogService.ShowMessage(obj.ResultMessage);
                 }));
             }
