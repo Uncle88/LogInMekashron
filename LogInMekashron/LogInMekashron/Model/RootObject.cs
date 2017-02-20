@@ -3,10 +3,10 @@ namespace LogInMekashron.Model
 {
     public class RootObject
     {
-        public RootObject()
+        public RootObject() { }
 
-        int ResultCode { get; set; }
-        string ResultMessage { get; set; }
+        public int ResultCode { get; set; }
+        public string ResultMessage { get; set; }
     }
 }
 

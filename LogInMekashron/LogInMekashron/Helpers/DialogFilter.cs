@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
+using LogInMekashron.Model;
+using Newtonsoft.Json;
 
 namespace LogInMekashron.Helpers
 {

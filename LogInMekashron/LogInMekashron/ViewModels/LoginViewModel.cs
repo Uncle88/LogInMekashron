@@ -6,6 +6,8 @@ using System.Xml.Linq;
 using LogInMekashron.Helpers;
 using LogInMekashron.Views;
 using System.Threading.Tasks;
+using LogInMekashron.Model;
+using Newtonsoft.Json;
 
 namespace LogInMekashron.ViewModels
 {
@@ -77,7 +79,8 @@ namespace LogInMekashron.ViewModels
                     }
                     XDocument doc = await _loginServiсe.Login(Login, Password);
                     string Message1 = DialogFilter.LinqFilter(doc);
-                    _dialogService.ShowMessage(Message1);
+                    RootObject obj = JsonConvert.DeserializeObject<RootObject>(Message1);
+                    _dialogService.ShowMessage(obj.ResultMessage);
                 }));
             }
         }
