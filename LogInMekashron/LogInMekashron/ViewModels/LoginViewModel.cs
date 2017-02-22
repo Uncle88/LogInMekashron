@@ -1,13 +1,11 @@
-﻿using LogInMekashron.Dialog;
-using LogInMekashron.LogIn;
-using LogInMekashron.Services;
-using Xamarin.Forms;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
+using LogInMekashron.Dialog;
 using LogInMekashron.Helpers;
-using LogInMekashron.Views;
-using System.Threading.Tasks;
+using LogInMekashron.LogIn;
 using LogInMekashron.Model;
+using LogInMekashron.Services;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace LogInMekashron.ViewModels
 {
@@ -18,33 +16,11 @@ namespace LogInMekashron.ViewModels
         private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
-        private XDocument _doc;
-        private string _message;
 
         public LoginViewModel()
         {
             _loginServiсe = new LogInService();
             _dialogService = new DialogService();
-        }
-
-        public string Message
-        {
-            get { return _message; }
-            set
-            {
-                _message = value;
-                OnPropertyChanged(nameof(Message));
-            }
-        }
-
-        public XDocument doc
-        {
-            get { return _doc; }
-            set
-            {
-                _doc = value;
-                OnPropertyChanged(nameof(doc));
-            }
         }
 
         public string Login
@@ -78,16 +54,8 @@ namespace LogInMekashron.ViewModels
                         return;
                     }
                     XDocument doc = await _loginServiсe.Login(Login, Password);
-                    string Message1 = DialogFilter.LinqFilter(doc);
-                    RootObject obj = JsonConvert.DeserializeObject<RootObject>(Message1);
-
-                    FormattedString formattedString = new FormattedString();
-                    formattedString.Spans.Contains(new Span
-                    {
-                        Text = obj.ResultMessage,
-                        ForegroundColor = Color.Orange
-                    });
-
+                    string Message = DialogFilter.LinqFilter(doc);
+                    RootObject obj = JsonConvert.DeserializeObject<RootObject>(Message);
                     _dialogService.ShowMessage(obj.ResultMessage);
                 }));
             }
