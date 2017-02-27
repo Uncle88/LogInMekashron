@@ -52,6 +52,7 @@
     <Compile Include="Helpers\DialogFilter.cs" />
     <Compile Include="Services\DependencyService\IIPAddressManager.cs" />
     <Compile Include="Model\RootObject.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

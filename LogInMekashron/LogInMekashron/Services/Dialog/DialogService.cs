@@ -7,7 +7,7 @@ namespace LogInMekashron.Dialog
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await Application.Current.MainPage.DisplayAlert("Message", message.ToUpper(), "OK");
+                await Application.Current.MainPage.DisplayAlert(Constants.PopUpMessageTitle, message.ToUpper(), Constants.ButtonComplete);
             });
         }
     }
