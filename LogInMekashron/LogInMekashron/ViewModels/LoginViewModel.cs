@@ -28,8 +28,11 @@ namespace LogInMekashron.ViewModels
             get { return _login; }
             set
             {
-                _login = value;
-                OnPropertyChanged(nameof(Login));
+                if (value != _login)
+                {
+                    _login = value;
+                    OnPropertyChanged();
+                }
             }
         }
 
@@ -38,8 +41,11 @@ namespace LogInMekashron.ViewModels
             get { return _password; }
             set
             {
-                _password = value;
-                OnPropertyChanged(nameof(Password));
+                if (value != _password)
+                {
+                    _password = value;
+                    OnPropertyChanged();
+                }
             }
         }
 
