@@ -30,7 +30,7 @@ namespace LogInMekashron.Services
 
         string ipaddress = DependencyService.Get<IIPAddressManager>().GetIPAddress();
 
-        private string ConstructSoapRequest(string login, string password, string ipaddress2)
+        private string ConstructSoapRequest(string login, string password, string ipaddress)
         {
             string xmlString = string.Format(@"<?xml version=""1.0"" encoding=""UTF-8""?>
                     <env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"" 
