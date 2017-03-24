@@ -9,8 +9,14 @@ namespace LogInMekashron.Droid
 {
     public class CustomLabelRenderer : LabelRenderer
     {
-        public CustomLabelRenderer()
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
+            base.OnElementChanged(e);
+
+            if (Control != null)
+            {
+                Control.SetTextColor(global::Android.Graphics.Color.Red);
+            }
         }
     }
 }
