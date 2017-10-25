@@ -1,2 +1,8 @@
-﻿namespace LogInMekashron.Dialog {     interface IDialogService
-    {         void ShowMessage(string Message);     } } 
+﻿namespace LogInMekashron.Dialog
+{
+    public interface IDialogService
+    {
+        void ShowMessage(string Message);
+    }
+}
+

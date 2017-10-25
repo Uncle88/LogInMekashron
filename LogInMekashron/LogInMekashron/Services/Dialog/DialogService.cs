@@ -5,10 +5,12 @@ namespace LogInMekashron.Dialog
     {
         public void ShowMessage(string message)
         {
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                await Application.Current.MainPage.DisplayAlert(Constants.PopUpMessageTitle, message.ToUpper(), Constants.ButtonComplete);
-            });
+            DependencyService.Get<IDialogService>().ShowMessage(message);
+
+            //Device.BeginInvokeOnMainThread(async () =>
+            //{
+            //    await Application.Current.MainPage.DisplayAlert(Constants.PopUpMessageTitle, message.ToUpper(), Constants.ButtonComplete);
+            //});
         }
     }
 }
