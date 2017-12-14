@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -82,19 +83,19 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.2.3.4.231\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -120,86 +121,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <None Include="scripts\uikit.min.js" />
-    <None Include="scripts\uikit.js" />
-    <None Include="scripts\core\utility.min.js" />
-    <None Include="scripts\core\utility.js" />
-    <None Include="scripts\core\touch.min.js" />
-    <None Include="scripts\core\touch.js" />
-    <None Include="scripts\core\toggle.min.js" />
-    <None Include="scripts\core\toggle.js" />
-    <None Include="scripts\core\tab.min.js" />
-    <None Include="scripts\core\tab.js" />
-    <None Include="scripts\core\switcher.min.js" />
-    <None Include="scripts\core\switcher.js" />
-    <None Include="scripts\core\smooth-scroll.min.js" />
-    <None Include="scripts\core\smooth-scroll.js" />
-    <None Include="scripts\core\scrollspy.min.js" />
-    <None Include="scripts\core\scrollspy.js" />
-    <None Include="scripts\core\offcanvas.min.js" />
-    <None Include="scripts\core\offcanvas.js" />
-    <None Include="scripts\core\nav.min.js" />
-    <None Include="scripts\core\nav.js" />
-    <None Include="scripts\core\modal.min.js" />
-    <None Include="scripts\core\modal.js" />
-    <None Include="scripts\core\grid.min.js" />
-    <None Include="scripts\core\grid.js" />
-    <None Include="scripts\core\dropdown.min.js" />
-    <None Include="scripts\core\dropdown.js" />
-    <None Include="scripts\core\cover.min.js" />
-    <None Include="scripts\core\cover.js" />
-    <None Include="scripts\core\core.min.js" />
-    <None Include="scripts\core\core.js" />
-    <None Include="scripts\core\button.min.js" />
-    <None Include="scripts\core\button.js" />
-    <None Include="scripts\core\alert.min.js" />
-    <None Include="scripts\core\alert.js" />
-    <None Include="scripts\components\upload.min.js" />
-    <None Include="scripts\components\upload.js" />
-    <None Include="scripts\components\tooltip.min.js" />
-    <None Include="scripts\components\tooltip.js" />
-    <None Include="scripts\components\timepicker.min.js" />
-    <None Include="scripts\components\timepicker.js" />
-    <None Include="scripts\components\sticky.min.js" />
-    <None Include="scripts\components\sticky.js" />
-    <None Include="scripts\components\sortable.min.js" />
-    <None Include="scripts\components\sortable.js" />
-    <None Include="scripts\components\slideshow.min.js" />
-    <None Include="scripts\components\slideshow.js" />
-    <None Include="scripts\components\slideshow-fx.min.js" />
-    <None Include="scripts\components\slideshow-fx.js" />
-    <None Include="scripts\components\slideset.min.js" />
-    <None Include="scripts\components\slideset.js" />
-    <None Include="scripts\components\slider.min.js" />
-    <None Include="scripts\components\slider.js" />
-    <None Include="scripts\components\search.min.js" />
-    <None Include="scripts\components\search.js" />
-    <None Include="scripts\components\parallax.min.js" />
-    <None Include="scripts\components\parallax.js" />
-    <None Include="scripts\components\pagination.min.js" />
-    <None Include="scripts\components\pagination.js" />
-    <None Include="scripts\components\notify.min.js" />
-    <None Include="scripts\components\notify.js" />
-    <None Include="scripts\components\nestable.min.js" />
-    <None Include="scripts\components\nestable.js" />
-    <None Include="scripts\components\lightbox.min.js" />
-    <None Include="scripts\components\lightbox.js" />
-    <None Include="scripts\components\htmleditor.min.js" />
-    <None Include="scripts\components\htmleditor.js" />
-    <None Include="scripts\components\grid.min.js" />
-    <None Include="scripts\components\grid.js" />
-    <None Include="scripts\components\grid-parallax.min.js" />
-    <None Include="scripts\components\grid-parallax.js" />
-    <None Include="scripts\components\form-select.min.js" />
-    <None Include="scripts\components\form-select.js" />
-    <None Include="scripts\components\form-password.min.js" />
-    <None Include="scripts\components\form-password.js" />
-    <None Include="scripts\components\datepicker.min.js" />
-    <None Include="scripts\components\datepicker.js" />
-    <None Include="scripts\components\autocomplete.min.js" />
-    <None Include="scripts\components\autocomplete.js" />
-    <None Include="scripts\components\accordion.min.js" />
-    <None Include="scripts\components\accordion.js" />
     <None Include="fonts\FontAwesome.otf" />
     <None Include="fonts\fontawesome-webfont.woff2" />
     <None Include="fonts\fontawesome-webfont.woff" />
@@ -336,13 +257,6 @@
     <None Include="Content\components\accordion.css" />
     <None Include="Content\components\accordion.almost-flat.min.css" />
     <None Include="Content\components\accordion.almost-flat.css" />
-    <None Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <None Include="Scripts\jquery-3.1.1.slim.min.js" />
-    <None Include="Scripts\jquery-3.1.1.slim.js" />
-    <None Include="Scripts\jquery-3.1.1.min.map" />
-    <None Include="Scripts\jquery-3.1.1.min.js" />
-    <None Include="Scripts\jquery-3.1.1.js" />
-    <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -352,5 +266,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>

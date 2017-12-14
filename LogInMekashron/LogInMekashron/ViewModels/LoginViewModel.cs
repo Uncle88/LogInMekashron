@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Threading.Tasks;
+using System.Xml.Linq;
 using LogInMekashron.Dialog;
 using LogInMekashron.Helpers;
 using LogInMekashron.LogIn;
@@ -53,7 +54,7 @@ namespace LogInMekashron.ViewModels
         {
             get
             {
-                return _clickCommand ?? (_clickCommand = new Command(async (_) =>//
+                return _clickCommand ?? (_clickCommand = new Command(async (_) =>
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
