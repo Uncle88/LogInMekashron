@@ -11,9 +11,7 @@ namespace LogInMekashron.Services
 {
     public class LogInService : ILoginService
     {
-        private const string Url = "http://isapi.mekashron.com/StartAJob/General.dll/soap/ILogin";
         private IRestService _restService;
-        public XDocument doc { get; set; }
 
         public LogInService()
         {
@@ -23,8 +21,8 @@ namespace LogInMekashron.Services
         public async Task<XDocument> Login(string login, string password)
         {
             var soapString = this.ConstructSoapRequest(login, password, ipaddress);
-            var content = new StringContent(soapString, Encoding.UTF8, "application/xml");
-            var doc = await _restService.GetAsync<string>(Url, content);
+            var content = new StringContent(soapString, Encoding.UTF8, Constants.mediaType);
+            var doc = await _restService.GetAsync<string>(Constants.Url, content);
             return doc;
         }
 

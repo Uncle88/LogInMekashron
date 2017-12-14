@@ -6,9 +6,6 @@ using Xamarin.Forms;
 
 
 [assembly: Dependency(typeof(LogInMekashron.iOS.DependencyService.IPAdressManager))]
-
-
-
 namespace LogInMekashron.iOS.DependencyService
 {
     public class IPAdressManager : IIPAddressManager

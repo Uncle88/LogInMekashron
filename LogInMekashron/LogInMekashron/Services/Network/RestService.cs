@@ -14,8 +14,8 @@ namespace LogInMekashron.Services
             var client = new HttpClient();
             var uri = new Uri(url);
 
-            content.Headers.TryAddWithoutValidation("Content-Type", "text/xml;charset=utf-8");
-            content.Headers.TryAddWithoutValidation("SOAPAction", "urn:General.Intf-IGeneral");
+            content.Headers.TryAddWithoutValidation(Constants.nameContentValidation, Constants.valueContentValidation);
+            content.Headers.TryAddWithoutValidation(Constants.nameContentValidation2, Constants.valueContentValidation2);
 
             var response = await client.PostAsync(uri, content);
 

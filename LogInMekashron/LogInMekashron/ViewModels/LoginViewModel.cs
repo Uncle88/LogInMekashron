@@ -62,7 +62,7 @@ namespace LogInMekashron.ViewModels
                     }
                     var doc = await _loginServiсe.Login(Login, Password);
                     string Message = DialogFilter.LinqFilter(doc);
-                    RootObject obj = JsonConvert.DeserializeObject<RootObject>(Message);
+                    ResponseObject obj = JsonConvert.DeserializeObject<ResponseObject>(Message);
                     _dialogService.ShowMessage(obj.ResultMessage);
                 }));
             }

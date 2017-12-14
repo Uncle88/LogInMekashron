@@ -12,7 +12,7 @@ namespace LogInMekashron.iOS.DialogService
         {
             UIAlertView alert = new UIAlertView()
             {
-                Title = "Title",
+                Title = "Authenticate message",
                 Message = Message,
             };
             alert.AddButton("OK");
@@ -20,14 +20,6 @@ namespace LogInMekashron.iOS.DialogService
             alert.TintColor.GetRGBA(out r, out g, out b, out alpha); //= UIColor.Red;
             alert.BackgroundColor = UIColor.Red;
             alert.Show();
-
-            //UIAlertView alert = new UIAlertView();
-            //alert.Title = "Error";
-            //alert.AddButton("OK");
-            //alert.AddButton("Cancel");
-            //alert.Message = "This should be an error message";
-            //alert.AlertViewStyle = UIAlertViewStyle.SecureTextInput;
-            //alert.Show();
         }
     }
 }
