@@ -53,6 +53,7 @@
     <Compile Include="Services\DependencyService\IIPAddressManager.cs" />
     <Compile Include="Model\ResponseObject.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Effects\EntryEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -93,6 +94,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\DependencyService\" />
     <Folder Include="Model\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

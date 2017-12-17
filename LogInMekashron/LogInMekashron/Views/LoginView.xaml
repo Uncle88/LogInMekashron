@@ -2,12 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:LogInMekashron.Views" 
+    xmlns:controls="clr-namespace:LogInMekashron.Effects" 
     x:Class="LogInMekashron.Views.LoginView">
 	<ContentPage.Content>
 		<StackLayout BackgroundColor="#FADBD8" VerticalOptions="StartAndExpand">
             
 			<Entry Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
-            TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text" />
+            TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text">
+             <Entry.Effects>
+                <controls:EntryEffect />
+            </Entry.Effects>
+            </Entry>
             
 			<Entry Text="{Binding Password}" HorizontalOptions="CenterAndExpand" Margin="5,15,5,15" VerticalOptions="StartAndExpand" 
             TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" />

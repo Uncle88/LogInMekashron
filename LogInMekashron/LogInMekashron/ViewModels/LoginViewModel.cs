@@ -1,6 +1,5 @@
-﻿using System.Threading.Tasks;
-using System.Xml.Linq;
-using LogInMekashron.Dialog;
+﻿using LogInMekashron.Dialog;
+using LogInMekashron.Effects;
 using LogInMekashron.Helpers;
 using LogInMekashron.LogIn;
 using LogInMekashron.Model;
@@ -17,6 +16,7 @@ namespace LogInMekashron.ViewModels
         private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
+        readonly EntryEffect _entryEffect;
 
         public LoginViewModel()
         {
@@ -58,7 +58,7 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-                        return;
+                        _entryEffect.Element.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
                     }
                     var doc = await _loginServiсe.Login(Login, Password);
                     string Message = DialogFilter.LinqFilter(doc);
