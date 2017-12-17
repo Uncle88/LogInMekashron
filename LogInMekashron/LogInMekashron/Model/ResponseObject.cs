@@ -1,6 +1,6 @@
 ﻿namespace LogInMekashron.Model
 {
-    public class RootObject
+    public class ResponseObject
     {
         public int ResultCode { get; set; }
         public string ResultMessage { get; set; }

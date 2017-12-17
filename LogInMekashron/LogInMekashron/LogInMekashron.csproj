@@ -51,7 +51,7 @@
     <Compile Include="Services\Dialog\DialogService.cs" />
     <Compile Include="Helpers\DialogFilter.cs" />
     <Compile Include="Services\DependencyService\IIPAddressManager.cs" />
-    <Compile Include="Model\RootObject.cs" />
+    <Compile Include="Model\ResponseObject.cs" />
     <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>

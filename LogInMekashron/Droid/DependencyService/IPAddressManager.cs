@@ -1,10 +1,8 @@
 ﻿using System.Net;
 using LogInMekashron.LogIn;
-//using Xamarin.Forms;
 
 
 [assembly: Xamarin.Forms.Dependency(typeof(LogInMekashron.Droid.DependencyService.IPAddressManager))]
-
 namespace LogInMekashron.Droid.DependencyService
 {
     class IPAddressManager : IIPAddressManager
