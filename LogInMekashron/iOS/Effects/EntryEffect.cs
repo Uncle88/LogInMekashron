@@ -5,7 +5,7 @@ using UIKit;
 using Xamarin.Forms;
 
 [assembly: ResolutionGroupName("LogInMekashron.Effects")]
-[assembly: ExportEffect(typeof(EntryEffect), "EntryEffect")]
+[assembly: ExportEffect(typeof(EntryEffects), "EntryEffect")]
 namespace LogInMekashron.iOS.Effects
 {
     public class EntryEffect : PlatformEffect<UIView, UITextField>
