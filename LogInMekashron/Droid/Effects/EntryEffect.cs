@@ -1,4 +1,4 @@
-﻿using LogInMekashron.Effects;
+﻿﻿using LogInMekashron.Effects;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -14,7 +14,6 @@ namespace LogInMekashron.Droid.Effects
             {
                 Control.SetBackgroundColor(Android.Graphics.Color.Red);
             }
-
         }
 
         protected override void OnDetached()
