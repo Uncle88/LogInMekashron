@@ -1,3 +1,4 @@
+
 ﻿using System.ComponentModel;
 using Foundation;
 using LogInMekashron.iOS.Effects;
@@ -5,10 +6,12 @@ using UIKit;
 using Xamarin.Forms;
 
 [assembly: ResolutionGroupName("Mekashron")]
+
 [assembly: ExportEffect(typeof(EntryEffect), "EntryEffect")]
 namespace LogInMekashron.iOS.Effects
 {
     public class EntryEffect : PlatformEffect<UIView, UITextField>
+
     {
         UIColor backgroundColor;
         protected override void OnAttached()
@@ -43,3 +46,4 @@ namespace LogInMekashron.iOS.Effects
         }
     }
 }
+

@@ -1,9 +1,9 @@
+
 ﻿using System.Threading.Tasks;
-<<<<<<< Updated upstream
 using System.Xml.Linq;
-=======
->>>>>>> Stashed changes
 using LogInMekashron.Dialog;
+﻿using LogInMekashron.Dialog;
+using LogInMekashron.Effects;
 using LogInMekashron.Helpers;
 using LogInMekashron.LogIn;
 using LogInMekashron.Model;
@@ -20,6 +20,7 @@ namespace LogInMekashron.ViewModels
         private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
+        readonly EntryEffect _entryEffect;
 
         public LoginViewModel()
         {
@@ -61,10 +62,7 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-<<<<<<< Updated upstream
-=======
                         ColorEffect();
->>>>>>> Stashed changes
                         return;
                     }
                     await GetData();
