@@ -54,10 +54,6 @@
     <Compile Include="Model\ResponseObject.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Effects\EntryEffects.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="Effects\EntryEffect.cs" />
->>>>>>> ba6c9e4e74c7df64aa93717e262ced1902235f84
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
