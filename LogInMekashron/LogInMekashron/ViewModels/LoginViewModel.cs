@@ -1,5 +1,8 @@
 ﻿using System.Threading.Tasks;
+<<<<<<< Updated upstream
 using System.Xml.Linq;
+=======
+>>>>>>> Stashed changes
 using LogInMekashron.Dialog;
 using LogInMekashron.Helpers;
 using LogInMekashron.LogIn;
@@ -58,15 +61,31 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
+<<<<<<< Updated upstream
+=======
+                        ColorEffect();
+>>>>>>> Stashed changes
                         return;
                     }
-                    var doc = await _loginServiсe.Login(Login, Password);
-                    string Message = DialogFilter.LinqFilter(doc);
-                    ResponseObject obj = JsonConvert.DeserializeObject<ResponseObject>(Message);
-                    _dialogService.ShowMessage(obj.ResultMessage);
+                    await GetData();
                 }));
             }
         }
+
+        public void ColorEffect()
+        {
+            var _entry = new Entry();
+            _entry.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
+            OnPropertyChanged(Login);
+            //_entryEffect.Element.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
+        }
+
+        public async Task GetData()
+        {
+            var doc = await _loginServiсe.Login(Login, Password);
+            string Message = DialogFilter.LinqFilter(doc);
+            ResponseObject obj = JsonConvert.DeserializeObject<ResponseObject>(Message);
+            _dialogService.ShowMessage(obj.ResultMessage);
+        }
     }
 }
-

@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace LogInMekashron.Droid
 {
-    [Activity(Label = "LogInMekashron.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "LogInMekashron.Droid", Icon = "@drawable/icon" , MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -26,3 +26,4 @@ namespace LogInMekashron.Droid
         }
     }
 }
+// , Theme = "@style/MyTheme"
