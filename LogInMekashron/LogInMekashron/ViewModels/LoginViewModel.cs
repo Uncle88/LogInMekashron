@@ -1,3 +1,7 @@
+
+﻿using System.Threading.Tasks;
+using System.Xml.Linq;
+using LogInMekashron.Dialog;
 ﻿using LogInMekashron.Dialog;
 using LogInMekashron.Effects;
 using LogInMekashron.Helpers;
@@ -58,15 +62,28 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-                        _entryEffect.Element.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
+                        ColorEffect();
+                        return;
                     }
-                    var doc = await _loginServiсe.Login(Login, Password);
-                    string Message = DialogFilter.LinqFilter(doc);
-                    ResponseObject obj = JsonConvert.DeserializeObject<ResponseObject>(Message);
-                    _dialogService.ShowMessage(obj.ResultMessage);
+                    await GetData();
                 }));
             }
         }
+
+        public void ColorEffect()
+        {
+            var _entry = new Entry();
+            _entry.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
+            OnPropertyChanged(Login);
+            //_entryEffect.Element.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
+        }
+
+        public async Task GetData()
+        {
+            var doc = await _loginServiсe.Login(Login, Password);
+            string Message = DialogFilter.LinqFilter(doc);
+            ResponseObject obj = JsonConvert.DeserializeObject<ResponseObject>(Message);
+            _dialogService.ShowMessage(obj.ResultMessage);
+        }
     }
 }
-

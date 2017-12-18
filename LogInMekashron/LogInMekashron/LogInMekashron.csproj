@@ -53,6 +53,7 @@
     <Compile Include="Services\DependencyService\IIPAddressManager.cs" />
     <Compile Include="Model\ResponseObject.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Effects\EntryEffects.cs" />
     <Compile Include="Effects\EntryEffect.cs" />
   </ItemGroup>
   <ItemGroup>

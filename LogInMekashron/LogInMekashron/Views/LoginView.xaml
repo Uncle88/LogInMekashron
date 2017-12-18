@@ -10,7 +10,7 @@
 			<Entry Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
             TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text">
              <Entry.Effects>
-                <controls:EntryEffect />
+                <controls:EntryEffects BackGround="Red"/>
             </Entry.Effects>
             </Entry>
             
@@ -18,7 +18,7 @@
             TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" />
             
 			<Button Command="{Binding ClickCommand}" Text="Login" TextColor="#002DFA" FontSize="30" Margin="5,25,5,450" 
-            HorizontalOptions="CenterAndExpand" BorderRadius="5" VerticalOptions="StartAndExpand" BackgroundColor="#FA0066" WidthRequest="180"/>
+            HorizontalOptions="CenterAndExpand" BorderRadius="5" VerticalOptions="StartAndExpand" BackgroundColor="Aqua" WidthRequest="180"/>
             
 		</StackLayout>
 	</ContentPage.Content>
