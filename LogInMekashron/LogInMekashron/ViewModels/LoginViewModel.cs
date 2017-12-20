@@ -3,6 +3,7 @@ using LogInMekashron.Dialog;
 using LogInMekashron.Helpers;
 using LogInMekashron.LogIn;
 using LogInMekashron.Model;
+using LogInMekashron.Renderer;
 using LogInMekashron.Services;
 using Newtonsoft.Json;
 using Xamarin.Forms;
@@ -57,7 +58,13 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-                        ColorEffect();
+                        
+                        //var _entry = new CustomEntry();
+                        // _entry.BackgroundColor = new Color(255, 45, 0);
+                        // OnPropertyChanged(Login);
+
+                       // ColorEffect();
+
                         return;
                     }
                     await GetData();
@@ -70,7 +77,6 @@ namespace LogInMekashron.ViewModels
             var _entry = new Entry();
             _entry.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
             OnPropertyChanged(Login);
-            //_entryEffect.Element.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
         }
 
         public async Task GetData()

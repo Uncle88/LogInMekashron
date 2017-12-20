@@ -6,7 +6,7 @@ namespace LogInMekashron
         public const string PopUpMessageTitle = "Message";
         public const string ButtonComplete = "OK";
 
-        public const string Url = "http://isapi.mekashron.com/StartAJob/General.dll/soap/ILogin";
+        public const string Url ="http://isapi.mekashron.com/StartAJob/General.dll/soap/ILogin"; //"http://isapi.mekashron.com/icu-tech/ICUTech.dll"; 
         public const string mediaType = "application/xml";
 
         public const string nameContentValidation = "Content-Type";
