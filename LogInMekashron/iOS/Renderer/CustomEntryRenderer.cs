@@ -16,7 +16,7 @@ namespace LogInMekashron.iOS.Renderer
             base.OnElementChanged(e);
             var entry = e.NewElement; 
 
-            if (Control == null)
+            if (Control != null)
             {
                 Control.BackgroundColor = UIColor.Red;
             }

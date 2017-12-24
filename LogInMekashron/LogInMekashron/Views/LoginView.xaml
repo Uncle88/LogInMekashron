@@ -7,7 +7,7 @@
 	<ContentPage.Content>
 		<StackLayout BackgroundColor="#FADBD8" VerticalOptions="StartAndExpand">
             
-			<local:CustomEntry Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
+			<local:CustomEntry IsVisible="" Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
             TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text"/>
          <!--       <Entry.Effects>
                 <controls:EntryEffects />

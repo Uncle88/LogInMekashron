@@ -19,7 +19,7 @@ namespace LogInMekashron.Droid.Renderer
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
+            if (Control != null)
             {
                 //GradientDrawable gradientDrawable = new GradientDrawable();
                 //gradientDrawable.SetColor(Element.BackgroundColor.ToAndroid());
