@@ -17,9 +17,11 @@ namespace LogInMekashron.ViewModels
         private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
+        private bool _isBusy;
 
         public LoginViewModel()
         {
+            IsBusy = false;
             _loginServiсe = new LogInService();
             _dialogService = new DialogService();
         }
@@ -58,7 +60,7 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-                        
+                        IsBusy = true;
                         //var _entry = new CustomEntry();
                         // _entry.BackgroundColor = new Color(255, 45, 0);
                         // OnPropertyChanged(Login);
@@ -69,6 +71,16 @@ namespace LogInMekashron.ViewModels
                     }
                     await GetData();
                 }));
+            }
+        }
+
+        public bool IsBusy 
+        { 
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged();
             }
         }
 
