@@ -69,6 +69,10 @@ namespace LogInMekashron.ViewModels
 
                         return;
                     }
+                    else
+                    {
+                        IsBusy = false;
+                    }
                     await GetData();
                 }));
             }

@@ -5,21 +5,21 @@
     xmlns:controls="clr-namespace:LogInMekashron.Effects" 
     x:Class="LogInMekashron.Views.LoginView">
 	<ContentPage.Content>
-		<StackLayout BackgroundColor="#FFD800" VerticalOptions="StartAndExpand">
+		<StackLayout BackgroundColor="#E0FEF7" VerticalOptions="StartAndExpand">
             
 			<local:CustomEntry Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
-            TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text"/>
+            TextColor="Black" BackgroundColor="#00FAEB" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text"/>
          <!--<Entry.Effects>
                 <controls:EntryEffects />
             </Entry.Effects>
             </Entry> -->
             
 			<local:CustomEntry Text="{Binding Password}" HorizontalOptions="CenterAndExpand" Margin="5,15,5,10" VerticalOptions="StartAndExpand" 
-            TextColor="#FA0800" BackgroundColor="#00FAEB" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" />
+            TextColor="Black" BackgroundColor="#00FAEB" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" />
 
             <Label IsVisible="{Binding IsBusy}" Text="Incorrect login or password" TextColor="Red" Margin="5,5,5,25" HorizontalOptions="CenterAndExpand"/>
             
-			<Button Command="{Binding ClickCommand}" Text="Login" TextColor="#002DFA" FontSize="30" Margin="5,25,5,420" 
+			<Button Command="{Binding ClickCommand}" Text="Login" TextColor="#002DFA" FontSize="30" Margin="5,55,5,420" 
             HorizontalOptions="CenterAndExpand" BorderRadius="5" VerticalOptions="StartAndExpand" BackgroundColor="Olive" WidthRequest="180"/>
             
 		</StackLayout>
