@@ -17,11 +17,12 @@ namespace LogInMekashron.ViewModels
         private string _password;
         private ILoginService _loginServiсe;
         private IDialogService _dialogService;
-        private bool _isBusy;
+        private bool _isEmptyEntry;
+        private bool _isEmptyLabel;
 
         public LoginViewModel()
         {
-            IsBusy = false;
+            IsEmptyLabel = true;
             _loginServiсe = new LogInService();
             _dialogService = new DialogService();
         }
@@ -60,39 +61,38 @@ namespace LogInMekashron.ViewModels
                 {
                     if (string.IsNullOrEmpty(Login) || string.IsNullOrEmpty(Password))
                     {
-                        IsBusy = true;
-                        //var _entry = new CustomEntry();
-                        // _entry.BackgroundColor = new Color(255, 45, 0);
-                        // OnPropertyChanged(Login);
-
-                       // ColorEffect();
-
+                        IsEmptyLabel = false;
+                        IsEmptyEntry = true;
                         return;
                     }
                     else
                     {
-                        IsBusy = false;
+                        IsEmptyEntry = false;
+                        IsEmptyLabel = true;
                     }
                     await GetData();
                 }));
             }
         }
 
-        public bool IsBusy 
+        public bool IsEmptyEntry 
         { 
-            get { return _isBusy; }
+            get { return _isEmptyEntry; }
             set
             {
-                _isBusy = value;
+                _isEmptyEntry = value;
                 OnPropertyChanged();
             }
         }
 
-        public void ColorEffect()
+        public bool IsEmptyLabel
         {
-            var _entry = new Entry();
-            _entry.Effects.Add(Effect.Resolve("LogInMekashron.EntryEffect"));
-            OnPropertyChanged(Login);
+            get { return _isEmptyLabel; }
+            set
+            {
+                _isEmptyLabel = value;
+                OnPropertyChanged();
+            }
         }
 
         public async Task GetData()

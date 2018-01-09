@@ -11,14 +11,31 @@ namespace LogInMekashron.iOS.Renderer
 {
     public class CustomEntryRenderer : EntryRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            base.OnElementChanged(e);
-            var entry = e.NewElement; 
-
-            if (Control != null)
+            Console.WriteLine(e.PropertyName);
+            if (e.PropertyName == CustomEntry.IsEmptyProperty.PropertyName)
             {
-                Control.BackgroundColor = UIColor.Red;
+                var customEntry = Element as CustomEntry;
+                if (customEntry == null)
+                {
+                    return;
+                }
+                if (Control!=null)
+                {
+                    if (customEntry.IsEmpty)
+                    {
+                        Control.BorderStyle = UITextBorderStyle.RoundedRect;
+                        Control.Layer.BorderColor = UIColor.Red.CGColor;
+                        Control.Layer.BorderWidth = new nfloat(2.0);
+                    }
+                    else
+                    {
+                        Control.BorderStyle = UITextBorderStyle.RoundedRect;
+                        Control.Layer.BorderColor = UIColor.Black.CGColor;
+                        Control.Layer.BorderWidth = new nfloat(1.0);
+                    }
+                }
             }
         }
     }
