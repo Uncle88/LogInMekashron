@@ -5,17 +5,14 @@
     xmlns:controls="clr-namespace:LogInMekashron.Effects" 
     x:Class="LogInMekashron.Views.LoginView">
 	<ContentPage.Content>
+        <ScrollView>
 		<StackLayout BackgroundColor="#FEF4FF" VerticalOptions="StartAndExpand">
             
 			<local:CustomEntry Text="{Binding Login}" HorizontalOptions="CenterAndExpand" Margin="5,50,5,15" VerticalOptions="StartAndExpand" 
-            TextColor="#000000" BackgroundColor="#A2FFBA" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text" IsEmpty="{Binding IsEmpty}"/>
-         <!--<Entry.Effects>
-                <controls:EntryEffects />
-            </Entry.Effects>
-            </Entry> -->
+            TextColor="#000000" BackgroundColor="#A2FFBA" Placeholder="Enter the Login" FontSize="30" Opacity="0.5" Keyboard="Text" IsEmpty="{Binding IsEmptyEntry}"/>
             
 			<local:CustomEntry Text="{Binding Password}" HorizontalOptions="CenterAndExpand" Margin="5,15,5,10" VerticalOptions="StartAndExpand" 
-            TextColor="#000000" BackgroundColor="#A2FFBA" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" IsEmpty="{Binding IsEmpty}"/>
+            TextColor="#000000" BackgroundColor="#A2FFBA" Placeholder="Enter the Password" FontSize="30" Opacity="0.5" Keyboard="Text" IsEmpty="{Binding IsEmptyEntry}"/>
 
             <Label IsVisible="{Binding IsEmptyEntry}" Text="Incorrect login or password" TextColor="Red" Margin="5,5,5,25" HorizontalOptions="CenterAndExpand"/>
             <Label IsVisible="{Binding IsEmptyLabel}" Text="Incorrect login or password" TextColor="#FEF4FF" Margin="5,5,5,25" HorizontalOptions="CenterAndExpand"/>
@@ -24,5 +21,6 @@
             HorizontalOptions="CenterAndExpand" BorderRadius="5" VerticalOptions="StartAndExpand" BackgroundColor="#FCBEFF" WidthRequest="180"/>
             
 		</StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

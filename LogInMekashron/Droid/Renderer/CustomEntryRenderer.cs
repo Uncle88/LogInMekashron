@@ -32,16 +32,17 @@ namespace LogInMekashron.Droid.Renderer
                 {
                     if (customEntry.IsEmpty)
                     {
-                        //var layoutParams = new MarginLayoutParams(Control.LayoutParameters);
-                        //layoutParams.SetMargins(0, 0, 0, 0);
-                        //LayoutParameters = layoutParams;           
-                        //Control.LayoutParameters = layoutParams;
-                        //Control.SetPadding(0, 0, 0, 0);
-                        //SetPadding(0, 0, 0, 0);
+                        var background = new GradientDrawable();
+                        background.SetStroke(2, Android.Graphics.Color.Red);
+                        background.SetCornerRadius(3.0f);
+                        Control.Background = background;
                     }
                     else
                     {
-
+                        var background = new GradientDrawable();
+                        background.SetStroke(1, Android.Graphics.Color.Black);
+                        background.SetCornerRadius(3.0f);
+                        Control.Background = background;
                     }
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using Android.Support.V7.App;
+using Android.Widget;
 using LogInMekashron.Dialog;
 using Xamarin.Forms;
 
@@ -15,5 +16,5 @@ namespace LogInMekashron.Droid.DialogService
             alertdialog.SetMessage(Message);
             alertdialog.Show();
         }
-    }
+    }     
 }
